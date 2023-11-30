@@ -1,10 +1,10 @@
 "use client"
 import Image from 'next/image'
-import openGift from '../../public/images/closed-gift.png'
+import openGift from '../../public/images/open-gift.png'
+import closedGift from '../../public/images/closed-gift.png'
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { GiftIcon } from '@heroicons/react/24/outline'
-
 import { useCallback } from "react";
 import Particles from "react-particles";
 import { loadSlim } from "tsparticles-slim"
@@ -12,51 +12,147 @@ import { loadSlim } from "tsparticles-slim"
 const days = [
   {
     id: 1,
-    name: 'Basic Tee',
-    href: '#',
-    imageAlt: "Front of men's Basic Tee in black.",
-    content: 'le petit mot',
-    color: 'Black',
+    imageAlt: "gift image",
+    content: 'Finalement je te fais un calendrier moi aussi !',
+    date: '2023-12-01'
   },
   {
     id: 2,
-    name: 'Basic Tee',
-    href: '#',
-    imageAlt: "Front of men's Basic Tee in black.",
-    content: 'qsefq sdfqse fqsf',
-    color: 'Black',
+    imageAlt: "gift image",
+    content: 'https://upload.wikimedia.org/wikipedia/commons/e/e5/Plain-M%26Ms-Pile.jpg',
+    date: '2023-12-02'
   },
   {
     id: 3,
-    name: 'Basic Tee',
-    href: '#',
-    imageAlt: "Front of men's Basic Tee in black.",
-    content: '$qsdf qsdf qse fqs 5',
-    color: 'Black',
+    imageAlt: "gift image",
+    content: 'https://index.gideon.ovh/share/VtHxp3Dv',
+    date: '2023-12-03'
   },
   {
     id: 4,
-    name: 'Basic Tee',
-    href: '#',
-    imageAlt: "Front of men's Basic Tee in black.",
-    content: 'qsef qsdf qse fqs efqsd f',
-    color: 'Black',
+    imageAlt: "gift image",
+    content: 'https://www.tentazioni-uk.com/image/cache/catalog/Products/biscuit/baciocchi_mulino_bianco_tentazioni-1000x1000.jpg',
+    date: '2023-12-04'
   },
   {
     id: 5,
-    name: 'Basic Tee',
-    href: '#',
-    imageAlt: "Front of men's Basic Tee in black.",
-    content: 'qsdfqsef qsdf qsef ',
-    color: 'Black',
+    imageAlt: "gift image",
+    content: 'https://index.gideon.ovh/share/wVG0NHMU',
+    date: '2023-12-05'
   },
   {
     id: 6,
-    name: 'Basic Tee',
-    href: '#',
-    imageAlt: "Front of men's Basic Tee in black.",
-    content: 'ma lorem ipsum ',
-    color: 'Black',
+    imageAlt: "gift image",
+    content: 'https://index.gideon.ovh/share/k2py21Sc',
+    date: '2023-12-06'
+  },
+  {
+    id: 7,
+    imageAlt: "gift image",
+    content: 'https://index.gideon.ovh/share/06VKbfjc',
+    date: '2023-12-07'
+  },
+  {
+    id: 8,
+    imageAlt: "gift image",
+    content: 'https://index.gideon.ovh/share/M57c1Jn2',
+    date: '2023-12-08'
+  },
+  {
+    id: 9,
+    imageAlt: "gift image",
+    content: 'https://index.gideon.ovh/share/fc8Ha8y1',
+    date: '2023-12-09'
+  },
+  {
+    id: 10,
+    imageAlt: "gift image",
+    content: 'https://index.gideon.ovh/share/DW0SUNON',
+    date: '2023-12-10'
+  },
+  {
+    id: 11,
+    imageAlt: "gift image",
+    content: 'https://index.gideon.ovh/share/JtPY64yI',
+    date: '2023-12-11'
+  },
+  {
+    id: 12,
+    imageAlt: "gift image",
+    content: 'https://index.gideon.ovh/share/5kGb8JNM',
+    date: '2023-12-12'
+  },
+  {
+    id: 13,
+    imageAlt: "gift image",
+    content: 'https://index.gideon.ovh/share/4eaGkck6',
+    date: '2023-12-13'
+  },
+  {
+    id: 14,
+    imageAlt: "gift image",
+    content: 'Comptoir volant pour quand je reviens ?',
+    date: '2023-12-14'
+  },
+  {
+    id: 15,
+    imageAlt: "gift image",
+    content: 'https://index.gideon.ovh/share/o08rs-8h',
+    date: '2023-12-15'
+  },
+  {
+    id: 16,
+    imageAlt: "gift image",
+    content: 'Surprise',
+    date: '2023-12-16'
+  },
+  {
+    id: 17,
+    imageAlt: "gift image",
+    content: 'https://index.gideon.ovh/share/xoeMaXYz',
+    date: '2023-12-17'
+  },
+  {
+    id: 18,
+    imageAlt: "gift image",
+    content: 'https://www.youtube.com/watch?v=12GYvfYjyV0&ab_channel=RedHotChiliPeppers',
+    date: '2023-12-18'
+  },
+  {
+    id: 19,
+    imageAlt: "gift image",
+    content: 'https://www.lotusbakeries.be/sites/default/files/styles/image_style_scale_width_xs/public/2017-03/1400%20Orig%20Chocolade.png?itok=Q8EbHvtv',
+    date: '2023-12-19'
+  },
+  {
+    id: 20,
+    imageAlt: "gift image",
+    content: 'https://index.gideon.ovh/share/qRl8Fb9B',
+    date: '2023-12-20'
+  },
+  {
+    id: 21,
+    imageAlt: "gift image",
+    content: 'https://index.gideon.ovh/share/LiC_nVVh',
+    date: '2023-12-21'
+  },
+  {
+    id: 22,
+    imageAlt: "gift image",
+    content: 'https://index.gideon.ovh/share/ubOCWiX3',
+    date: '2023-12-22'
+  },
+  {
+    id: 23,
+    imageAlt: "gift image",
+    content: 'On ferait pas du Mario wonders ? 🍄',
+    date: '2023-12-23'
+  },
+  {
+    id: 24,
+    imageAlt: "gift image",
+    content: '🎁 Joyeux Noël ! 🎄',
+    date: '2023-12-24'
   },
   // More days...
 ]
@@ -74,6 +170,19 @@ export default function Home() {
     console.log(container);
   }, []);
 
+  const checkDate = useCallback(async (date:string) => {
+    const newDate = new Date()
+    const giftDate = new Date(date)
+    if (giftDate.getTime() <= newDate.getTime()) setModalOpen(true)
+  }, [])
+
+  const checkGiftDate = useCallback((date:string) => {
+    const newDate = new Date()
+    const giftDate = new Date(date)
+    if (giftDate.getTime() <= newDate.getTime()) return false
+    return true
+  }, [])
+
   return (
     <div>
       <Particles
@@ -84,7 +193,7 @@ export default function Home() {
           name: "Snow",
           particles: {
             number: {
-              value: 400,
+              value: 600,
               density: {
                 enable: true,
               },
@@ -118,7 +227,7 @@ export default function Home() {
                 max: 100,
               },
               opacityRate: 10,
-              sizeRate: 10,
+              sizeRate: 20,
               velocityRate: 10,
             },
           },
@@ -131,25 +240,31 @@ export default function Home() {
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-gray-900 text-center">🎁 Ton petit calendrier de l'avent 🎁</h2>
 
-          <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4 lg:grid-cols-4 xl:gap-x-8">
+          <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4 lg:grid-cols-6 xl:gap-x-8">
             {days.map((gift) => (
               <div key={gift.id} className="group relative">
-                <div className="square rounded-md backdrop-blur-sm bg-white/30  group-hover:opacity-75" onClick={() => { setModalOpen(true), setCurrentGift(gift.id - 1) }}>
+                <div className="square rounded-md backdrop-blur-sm bg-white/30  group-hover:opacity-75" onClick={() => { checkDate(gift.date), setCurrentGift(gift.id - 1) }}>
                   <div className="flex">
                     <h3 className="mt-2 ml-2 text-sm text-gray-700 border-2  border-red-400 px-2 rounded-xl">
-                      <a href={gift.href}>
+                      <a>
                         <span aria-hidden="true" className="absolute inset-0" />
                         {gift.id}
                       </a>
                     </h3>
                   </div>
-                  <Image
-                    src={openGift}
+                  {checkGiftDate(gift.date) ? ( <Image
+                    src={closedGift}
                     alt={gift.imageAlt}
                     width={500}
                     height={500}
                     className="motion-safe:animate-bounce px-1 pb-1"
-                  />
+                  />): ( <Image
+                    src={openGift}
+                    alt={gift.imageAlt}
+                    width={500}
+                    height={500}
+                    className="px-1 pb-1"
+                  />)}
                 </div>
               </div>
             ))}
@@ -192,9 +307,9 @@ export default function Home() {
                       La surprise du jour 🙈
                     </Dialog.Title>
                     <div className="mt-2">
-                      <p className="text-sm text-gray-500">
+                      <a href={days[currentGift].content} className="text-sm text-gray-500">
                         {days[currentGift].content}
-                      </p>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -210,7 +325,6 @@ export default function Home() {
               </Dialog.Panel>
             </div>
           </Transition.Child>
-
         </Dialog>
       </Transition>
     </div>
