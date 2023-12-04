@@ -176,12 +176,12 @@ export default function Home() {
     if (giftDate.getTime() <= newDate.getTime()) setModalOpen(true)
   }, [])
 
-  const checkGiftDate = useCallback((date:string) => {
+  const checkGiftDate =(date:string) => {
     const newDate = new Date()
     const giftDate = new Date(date)
     if (giftDate.getTime() <= newDate.getTime()) return false
     return true
-  }, [])
+  }
 
   return (
     <div>
