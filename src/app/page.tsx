@@ -153,8 +153,7 @@ const days = [
     imageAlt: "gift image",
     content: '🎁 Joyeux Noël ! 🎄',
     date: '2023-12-24'
-  },
-  // More days...
+  }
 ]
 
 
