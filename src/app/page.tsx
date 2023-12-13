@@ -91,7 +91,7 @@ const days = [
   {
     id: 14,
     imageAlt: "gift image",
-    content: 'Comptoir volant pour quand je reviens ?',
+    content: 'Comptoir volant pour quand je reviens ? 🍔🙈',
     date: '2023-12-14'
   },
   {
@@ -103,8 +103,8 @@ const days = [
   {
     id: 16,
     imageAlt: "gift image",
-    content: 'Surprise',
-    date: '2023-12-16'
+    content: 'https://www.youtube.com/watch?v=12GYvfYjyV0&ab_channel=RedHotChiliPeppers',
+    date: '2023-12-18'
   },
   {
     id: 17,
@@ -115,8 +115,8 @@ const days = [
   {
     id: 18,
     imageAlt: "gift image",
-    content: 'https://www.youtube.com/watch?v=12GYvfYjyV0&ab_channel=RedHotChiliPeppers',
-    date: '2023-12-18'
+    content: '🇨🇭 Surprise 🇨🇭',
+    date: '2023-12-16'
   },
   {
     id: 19,
