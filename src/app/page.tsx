@@ -170,15 +170,13 @@ export default function Home() {
   }, []);
 
   const checkDate = useCallback(async (date:string) => {
-    const newDate = new Date()
     const giftDate = new Date(date)
-    if (giftDate.getTime() <= newDate.getTime()) setModalOpen(true)
+    if (giftDate.getTime() <= Date.now()) setModalOpen(true)
   }, [])
 
   const checkGiftDate =(date:string) => {
-    const newDate = new Date()
     const giftDate = new Date(date)
-    if (giftDate.getTime() <= newDate.getTime()) return false
+    if (giftDate.getTime() <= Date.now()) return false
     return true
   }
 
