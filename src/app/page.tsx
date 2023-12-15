@@ -115,7 +115,7 @@ const days = [
   {
     id: 18,
     imageAlt: "gift image",
-    content: '🇨🇭 Surprise 🇨🇭',
+    content: '🇨🇭 Surprise 🇨🇭 ',
     date: '2023-12-16'
   },
   {
